@@ -1,0 +1,14 @@
+<div>
+    <span *ngFor="let es of entry_states"><span [ngStyle]="{'font-weight':es === curr_state ? 'bold' : 'lighter' }"> >
+            {{es}}</span></span>
+</div>
+<div>
+    <h2>{{curr_state}} screen</h2>
+</div>
+<div>
+    <p *ngIf="next_states.length">Next screens:</p>
+    <p *ngIf="!next_states.length">Order sent to backend</p>
+</div>
+<div *ngFor="let ns of next_states">
+    <button (click)="goto(ns)">{{ns}}</button>
+</div>
