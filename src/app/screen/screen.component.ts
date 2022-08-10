@@ -16,12 +16,12 @@ export class ScreenComponent implements OnInit {
   constructor(public stateService: StateServiceService) {
     this.state_space = new Map<string, Array<string>>()
     this.state_space.set("order", ["product"])
-    this.state_space.set("product", ["scent", "error"]);
-    this.state_space.set("scent", ["holder colour", "error"]);
-    this.state_space.set("holder colour", ["message", "error"]);
-    this.state_space.set("message", ["cart review", "error"]);
-    this.state_space.set("cart review", ["product_edit", "scent_edit", "holder_colour_edit", "error", "complete"]);
-    this.state_space.set("complete", []);
+      .set("product", ["scent", "error"])
+      .set("scent", ["holder colour", "error"])
+      .set("holder colour", ["message", "error"])
+      .set("message", ["cart review", "error"])
+      .set("cart review", ["product_edit", "scent_edit", "holder_colour_edit", "error", "complete"])
+      .set("complete", []);
     this.curr_state = "order";
     this.next_states = this.state_space.get(this.curr_state) ?? [];
     this.entry_states = [...this.state_space.keys()]
