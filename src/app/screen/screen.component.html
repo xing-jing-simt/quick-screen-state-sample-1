@@ -2,8 +2,9 @@
     <span *ngFor="let es of entry_states"><span [ngStyle]="{'font-weight':es === curr_state ? 'bold' : 'lighter' }"> >
             {{es}}</span></span>
 </div>
-<div>
+<div style="white-space: pre-line">
     <h2>{{curr_state}} screen</h2>
+    <p>{{screen_info.get(curr_state)}}</p>
 </div>
 <div>
     <p *ngIf="next_states.length">Next screens:</p>
